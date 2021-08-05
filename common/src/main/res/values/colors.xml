@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fafafa</color>
+    <color name="colorPrimaryDark">#fafafa</color>
+    <color name="colorAccent">#3ab4f7</color>
+    <color name="orange">#fe9f61</color>
+    <color name="orange2">#ffc999</color>
+    <color name="colorDefault">#3ab4f7</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="colorDefaultBG">#e1f3f3</color>
+    <color name="colorGray">#dfdfdf</color>
+    <color name="colorGray_light">#f7f7f7</color>
+    <color name="colorGray_light2">#f4f4f4</color>
+    <color name="colorGray_light3">#efefef</color>
+    <color name="colorGray_light4">#F3F2F2</color>
+    <color name="wathetBlue">#d6e8fc</color>
+    <color name="textColorGray">#808080</color>
+    <color name="android_default_bg">#fafafa</color>
+    <color name="green">#03af77</color>
+    <color name="green_light">#00ff00</color>
+    <color name="color_red">#FA3A3A</color>
+    <color name="grey_alpha">#B3393A3F</color>
+    <color name="member_info">#8d8d8d</color>
+    <color name="listitem_normal">#a5a5a5</color>
+    <color name="listitem_alpha">#88a5a5a5</color>
+    <color name="blue_light">#26aba2</color>
+</resources>

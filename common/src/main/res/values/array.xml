@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="spinner_state">
+        <item>禁用</item>
+        <item>启用</item>
+    </array>
+
+    <string-array name="common_phoneno">
+        <item>119</item>
+        <item>911</item>
+        <item>12395</item>
+        <item>110</item>
+        <item>12121</item>
+        <item>120</item>
+        <item>12117</item>
+        <item>122</item>
+        <item>999</item>
+        <item>12110</item>
+        <item>95119</item>
+        <item>114</item>
+        <item>112</item>
+        <item>11185</item>
+        <item>12306</item>
+        <item>12348</item>
+        <item>95598</item>
+        <item>12318</item>
+        <item>12315</item>
+        <item>12358</item>
+        <item>12365</item>
+        <item>12310</item>
+        <item>12369</item>
+        <item>12333</item>
+        <item>12345</item>
+        <item>12320</item>
+        <item>10000</item>
+        <item>10010</item>
+        <item>10086</item>
+        <item>17900</item>
+        <item>17911</item>
+        <item>17951</item>
+        <item>116114</item>
+        <item>118114</item>
+        <item>10050</item>
+        <item>10086999</item>
+    </string-array>
+    <string-array name="emergency_phone">
+        <item>110</item>
+        <item>112</item>
+        <item>114</item>
+        <item>119</item>
+        <item>122</item>
+        <item>120</item>
+    </string-array>
+</resources>
