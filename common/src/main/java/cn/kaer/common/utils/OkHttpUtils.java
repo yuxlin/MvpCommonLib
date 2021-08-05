@@ -12,6 +12,7 @@ import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
@@ -53,7 +54,7 @@ public class OkHttpUtils {
         return okHttpClient.newCall(request).execute();
     }
 
-    public static Response httpPostSync(String url, FormBody formBody) throws IOException {
+    public static Response httpPostSync(String url, RequestBody formBody) throws IOException {
         init();
         Request request = new Request.Builder().url(url).method("POST", formBody).build();
         return okHttpClient.newCall(request).execute();
