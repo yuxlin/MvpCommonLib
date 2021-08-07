@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 2
-        versionName "1.0.2"
+        versionCode 3
+        versionName "1.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -16,7 +16,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+          //  minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -29,8 +29,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     testImplementation 'junit:junit:4.12'
+
     api 'com.squareup.okhttp3:okhttp:3.9.1'
     implementation 'com.squareup.okio:okio:1.14.0'
     api 'io.reactivex.rxjava2:rxjava:2.1.0'
@@ -48,7 +49,7 @@ dependencies {
     api "com.qmuiteam:arch:$qmui_arch_version"
     annotationProcessor "com.qmuiteam:arch-compiler:$qmui_arch_version"
     api 'com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar'
-    api 'com.blankj:utilcodex:1.30.5'
+    api 'com.blankj:utilcodex:1.30.6'
 
 
  /*   annotationProcessor 必须在app模块加上才生效
@@ -60,7 +61,6 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:$room_version"
     /*annotationProcessor 必须在app模块加上才生效*/
     api "androidx.room:room-runtime:$room_version"
-    api 'com.blankj:utilcodex:1.30.5'
 
 
 

@@ -38,5 +38,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
 
-   implementation project(path: ":common")
+  implementation project(path: ":common")
+
+   // implementation 'com.github.yuxlin:PdaSpeedTest:1.0.2'
 }
