@@ -26,7 +26,9 @@ public class HttpLogInterceptor implements Interceptor {
     private static final Charset UTF8 = Charset.forName("UTF-8");
 
     public enum Level {
-        /** No logs. */
+        /**
+         * No logs.
+         */
         NONE,
         /**
          * Logs request and response lines.
@@ -84,11 +86,13 @@ public class HttpLogInterceptor implements Interceptor {
     public interface Logger {
         void log(String message);
 
-        /** A {@link Logger} defaults output appropriate for the current platform. */
+        /**
+         * A {@link Logger} defaults output appropriate for the current platform.
+         */
         Logger DEFAULT = new Logger() {
             @Override
             public void log(String message) {
-                Platform.get().log(INFO, message, null);
+                Platform.get().log(Platform.WARN, message, null);
             }
         };
     }
@@ -105,7 +109,9 @@ public class HttpLogInterceptor implements Interceptor {
 
     private volatile Level level = Level.NONE;
 
-    /** Change the level at which this interceptor logs. */
+    /**
+     * Change the level at which this interceptor logs.
+     */
     public HttpLogInterceptor setLevel(Level level) {
         if (level == null) {
             throw new NullPointerException("level == null. Use Level.NONE instead.");
@@ -132,7 +138,7 @@ public class HttpLogInterceptor implements Interceptor {
 
         RequestBody requestBody = request.body();
         boolean hasRequestBody = requestBody != null;
-
+        logLine();
         Connection connection = chain.connection();
         Protocol protocol = connection != null ? connection.protocol() : Protocol.HTTP_1_1;
         String requestStartMessage = "--> " + request.method() + ' ' + request.url() + ' ' + protocol;
@@ -229,7 +235,7 @@ public class HttpLogInterceptor implements Interceptor {
                         logger.log("");
                         logger.log("Couldn't decode the response body; charset is likely malformed.");
                         logger.log("<-- END HTTP");
-
+                        logLine();
                         return response;
                     }
                 }
@@ -237,12 +243,14 @@ public class HttpLogInterceptor implements Interceptor {
                 if (!isPlaintext(buffer)) {
                     logger.log("");
                     logger.log("<-- END HTTP (binary " + buffer.size() + "-byte body omitted)");
+                    logLine();
                     return response;
                 }
-                if (buffer.size()>2048){
+                if (buffer.size() > 2048) {
                     logger.log("");
                     logger.log("response body too large,omitted ");
                     logger.log("<-- END HTTP (binary " + buffer.size() + "-byte body)");
+                    logLine();
                     return response;
                 }
                 if (contentLength != 0) {
@@ -251,10 +259,15 @@ public class HttpLogInterceptor implements Interceptor {
                 }
 
                 logger.log("<-- END HTTP (" + buffer.size() + "-byte body)");
+                logLine();
             }
         }
 
         return response;
+    }
+
+    private void logLine() {
+        logger.log("====================================");
     }
 
     /**

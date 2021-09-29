@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 3
-        versionName "1.0.3"
+        versionCode 8
+        versionName "1.0.8"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -16,7 +16,7 @@ android {
 
     buildTypes {
         release {
-          //  minifyEnabled false
+            //  minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -32,16 +32,22 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     testImplementation 'junit:junit:4.12'
 
-    api 'com.squareup.okhttp3:okhttp:3.9.1'
-    implementation 'com.squareup.okio:okio:1.14.0'
-    api 'io.reactivex.rxjava2:rxjava:2.1.0'
+    api 'com.squareup.okhttp3:okhttp:3.14.9'
+    implementation 'com.squareup.okio:okio:1.17.2'
+
+    api "io.reactivex.rxjava3:rxjava:3.1.0"
+    api 'io.reactivex.rxjava3:rxandroid:3.0.0'
+/*   api 'io.reactivex.rxjava2:rxjava:2.1.0'
     api 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    api 'com.squareup.retrofit2:retrofit:2.3.0' // 必要
-    api 'com.squareup.retrofit2:converter-scalars:2.2.0'// retrofit依赖
-    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0' // 必要依赖，和Rxjava结合必须用到，下面会提到
-    api 'com.squareup.retrofit2:converter-gson:2.3.0'
-    /*日志写入*/
-    implementation 'com.orhanobut:logger:2.2.0'
+        api 'com.squareup.retrofit2:converter-scalars:2.9.0'// retrofit依赖
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    */
+
+    api 'com.squareup.retrofit2:retrofit:2.9.0' // 必要
+    api 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'me.jessyan:retrofit-url-manager:1.4.0'
+
 
     /* QMUI*/
     api 'com.qmuiteam:qmui:2.0.0-alpha11'
@@ -52,8 +58,8 @@ dependencies {
     api 'com.blankj:utilcodex:1.30.6'
 
 
- /*   annotationProcessor 必须在app模块加上才生效
-    * 根目录build.gradle 添加 classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'*/
+    /*   annotationProcessor 必须在app模块加上才生效
+       * 根目录build.gradle 添加 classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'*/
     api 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
@@ -61,7 +67,6 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:$room_version"
     /*annotationProcessor 必须在app模块加上才生效*/
     api "androidx.room:room-runtime:$room_version"
-
 
 
 }

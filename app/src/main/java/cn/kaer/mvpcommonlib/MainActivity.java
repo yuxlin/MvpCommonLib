@@ -1,7 +1,7 @@
 package cn.kaer.mvpcommonlib;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import cn.kaer.mvpcommonlib.test.HttpTest;
 
 
 import android.os.Bundle;
@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
         url = AppConfig.SPEED_TEST_ADDRESS;
         SpeedTestManager.get().startSpeedTestActivity(this,url , "123", "威海", 10, 10, "");
         finish();*/
+
+
+        new HttpTest().init(this);
 
 
     }

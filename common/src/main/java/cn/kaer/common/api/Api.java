@@ -29,8 +29,9 @@ import okhttp3.ResponseBody;
 import okio.Buffer;
 import okio.BufferedSource;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
+
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class Api<T> {
@@ -94,8 +95,8 @@ public class Api<T> {
         this.retrofit = new Retrofit.Builder()
                 .client(okHttpClient)
                 .addConverterFactory(this.mIApiConfig.getFactory())
-                .addConverterFactory(ScalarsConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
 
                 .baseUrl(this.mIApiConfig.getBaseUrl())
                 .build();
